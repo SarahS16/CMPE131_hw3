@@ -1,19 +1,26 @@
-<html>
-    <head>
-         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    {{message}}
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        <h1> Welcome {{name}} </h1>
-        <a href="https://www.google.com"> not google </a>
-        <ul>
-            {% for city in cities %}    
-                <li> {{city}}</li>
-            {% endfor %} 
-        </ul>
-    </head>
-</html>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+<h1> Welcome {{name}} </h1>
+<a href="https://www.google.com"> not google </a>
+<ul>
+    {% for city in cities %}    
+        <li> {{city}}</li>
+    {% endfor %} 
+</ul>
+    
+<form action ="" method="POST">
+    <label>City Name</label>
+    <input id="input" name="input" maxlength="32"/>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
+
      
