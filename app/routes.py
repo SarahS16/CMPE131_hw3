@@ -8,10 +8,10 @@ from app import myapp
 def home():
     name = 'Sarah'
     city_names = ['Paris', 'London', 'Rome', 'Tahiti']
-    if request.method == 'GET':
-        return render_template('home.html', name=name, cities=city_names)
     if request.method == 'POST':
         input = request.form["input"]
         flash(input)
+        return render_template('home.html', name=name, cities=city_names)
+    else:
         return render_template('home.html',name=name,cities=city_names)
     
