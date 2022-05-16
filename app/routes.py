@@ -1,4 +1,3 @@
-from pickle import GET
 from flask import render_template, flash
 from flask import request
 from app import myapp
